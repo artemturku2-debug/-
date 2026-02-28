@@ -1,7 +1,10 @@
+import tables.Table;
 public class Main {
     public static void main(String[] args) {
-        haal p = new haal();
-        order stageOne = new order();//
-
-    }
+        int CrusherP=0;
+        do {Service p = new Service();
+            CrusherP++;
+        } while (CrusherP <2);
+        order stageOne = new order();
+        }
 }
