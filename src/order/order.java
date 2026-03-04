@@ -61,7 +61,6 @@ public class order {
         System.out.print("Может хотите первое?");
         String input = scanner.nextLine();
 
-
         boolean found = false;
         for (String cmd : first) {
             if (cmd.equalsIgnoreCase(input)) {
@@ -69,7 +68,6 @@ public class order {
                 break;
             }
         }
-
         if (found) {
             System.out.println("Такое у нас есть");
             System.out.println("цена:" + FirstPrice);
@@ -77,10 +75,7 @@ public class order {
             System.out.println("Такого в меню нет");
             FirstPrice = 0;
         }
-
     }
-
-
     {
         System.out.print("А второе будете?");
         String input = scanner.nextLine();
@@ -103,7 +98,6 @@ public class order {
         }
 
     }
-
     {
         System.out.print("Может ещё салат?");
         String input = scanner.nextLine();
@@ -125,7 +119,6 @@ public class order {
         System.out.println("Заказ принят, ожидайте");
         System.out.println("цена:" + salatPrice);
     }
-
     {
         System.out.print("хотите сладкого?");
         String input = scanner.nextLine();
@@ -137,7 +130,6 @@ public class order {
                 break;
             }
         }
-
         if (found) {
             System.out.println("Такое у нас есть");
         } else {

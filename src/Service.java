@@ -1,33 +1,39 @@
 import tables.Table;
-import Tableebable.ServiceAct;
 import java.util.Scanner;
 
-public class Service{
-    Scanner scanner = new Scanner(System.in);
-    {
-        System.out.println("Здравствуйте, дорогой (на самом деле нет) гость!");
-        System.out.println("Вот список свободных столов:");
+public class Service {
+    {System.out.println("Дарова чёрт, где сядешь?");
+    System.out.println();
+    }
+    public final Table[] tables;
 
+    public Service() {
+        this.tables = createTables();
+    }
+    public Table[] createTables() {
+        Scanner sc = new Scanner(System.in);
+        Table[] tables = new Table[10];
+        for (int i = 0; i < tables.length; i++) {
+            tables[i] = new Table(i + 1);
+        }
+        return tables;
+    }
+    Scanner sc = new Scanner(System.in);
 
-        for (Table t : ServiceAct.getTable()) {
-        if (!t.isOccupied()) {
-            System.out.print(t.getNumber() + " ");
+    public boolean reserveTable(int tableNumber) {
+        int tableNumber = sc.nextInt();
+
+        if (tableNumber < 1 || tableNumber > tables.length) {
+            System.out.println("Неверный номер столика. Введите число от 1 до " + tables.length);
+            return false;
+        }
+        Table table = tables[tableNumber - 1];
+        if (table.reserve()) {
+            System.out.println("Столик " + tableNumber + " успешно забронирован!");
+            return true;
+        } else {
+            System.out.println("Столик " + tableNumber + " уже занят. Выберите другой.");
+            return false;
         }
     }
-
-        System.out.print("Введите номер столика для бронирования: ");
-    int tableNumber = scanner.nextInt();
-        try {
-        tableNumber = Integer.parseInt(scanner.nextLine());
-        
-    } catch (NumberFormatException e) {
-        System.out.println("Ну ты и криворукий, не можешь даже нормально ввести номер");
-        scanner.close();
-        
-    }
-        
 }
-}
-
-
-
