@@ -19,20 +19,20 @@ public class Service {
         return tables;
     }
     Scanner sc = new Scanner(System.in);
+    int number = sc.nextInt();
 
-    public boolean reserveTable(int tableNumber) {
-        int tableNumber = sc.nextInt();
+    public boolean reserveTable() {
 
-        if (tableNumber < 1 || tableNumber > tables.length) {
+        if (number < 1 || number > tables.length) {
             System.out.println("Неверный номер столика. Введите число от 1 до " + tables.length);
             return false;
         }
-        Table table = tables[tableNumber - 1];
+        Table table = tables[number - 1];
         if (table.reserve()) {
-            System.out.println("Столик " + tableNumber + " успешно забронирован!");
+            System.out.println("Столик " + number + " успешно забронирован!");
             return true;
         } else {
-            System.out.println("Столик " + tableNumber + " уже занят. Выберите другой.");
+            System.out.println("Столик " + number + " уже занят. Выберите другой.");
             return false;
         }
     }
