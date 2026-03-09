@@ -1,4 +1,8 @@
 import tables.Table;
+import dish.dish;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Service {
@@ -39,5 +43,14 @@ public class Service {
         }
             while (tables[number].reserve());
         return tables;
+    }
+    {
+        System.out.println("Здраствуйте, вот меню");
+        System.out.println("Напитки");
+        for (Map.Entry<String, Double> entry : drinks.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue() + " руб.");
+        }
+
+
     }
 }
