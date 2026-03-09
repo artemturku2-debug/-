@@ -35,12 +35,12 @@ public class order {
             System.out.println(cmd + "  ");
         }
     }
-
+    {System.out.println("Бухать буш?");}
     Scanner scanner = new Scanner(System.in);
     String choice = scanner.nextLine();
 
     {
-        System.out.println("Бухать буш?");
+
         String input = scanner.nextLine();
         boolean found = false;
         for (String cmd : drinks) {
@@ -145,6 +145,7 @@ public class order {
             System.out.println(sum);
             System.out.println("Заказ принят, ожидайте");
             System.out.println("Готовится заказ");
+            System.out.println("Заказ готов, принимайте за щеку!");
         }
     }
 }

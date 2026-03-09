@@ -2,7 +2,7 @@ import tables.Table;
 import java.util.Scanner;
 
 public class Service {
-    {System.out.println("Дарова чёрт, где сядешь?");
+    {System.out.println("Здрастье, где сядете?");
     System.out.println();
     }
     public final Table[] tables;
@@ -16,24 +16,28 @@ public class Service {
         for (int i = 0; i < tables.length; i++) {
             tables[i] = new Table(i + 1);
         }
+        int number;
+
+        do {
+
+
+            sc = new Scanner(System.in);
+            number = sc.nextInt();
+            {
+                if (number < 1 || number > tables.length) {
+                    System.out.println("Неверный номер столика. Введите число от 1 до " + tables.length);
+                } else {
+                    Table table = tables[number];
+                    if (table.reserve()) {
+                        System.out.println("Столик " + number + " успешно забронирован!");
+                        System.out.println();
+
+
+                    }
+                }
+            }
+        }
+            while (tables[number].reserve());
         return tables;
-    }
-    Scanner sc = new Scanner(System.in);
-    int number = sc.nextInt();
-
-    public boolean reserveTable() {
-
-        if (number < 1 || number > tables.length) {
-            System.out.println("Неверный номер столика. Введите число от 1 до " + tables.length);
-            return false;
-        }
-        Table table = tables[number - 1];
-        if (table.reserve()) {
-            System.out.println("Столик " + number + " успешно забронирован!");
-            return true;
-        } else {
-            System.out.println("Столик " + number + " уже занят. Выберите другой.");
-            return false;
-        }
     }
 }
