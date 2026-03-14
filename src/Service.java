@@ -44,13 +44,4 @@ public class Service {
             while (tables[number].reserve());
         return tables;
     }
-    {
-        System.out.println("Здраствуйте, вот меню");
-        System.out.println("Напитки");
-        for (Map.Entry<String, Double> entry : drinks.entrySet()) {
-            System.out.println(entry.getKey() + " -> " + entry.getValue() + " руб.");
-        }
-
-
-    }
 }
